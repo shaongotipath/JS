@@ -149,3 +149,156 @@ function factorial(n) {
 }
 
 console.log(factorial(5));
+
+//find the count of duplicate values from an array and string
+const arr7 = [1, 2, 3, 4, 5, 3, 4, 6, 7];
+const str2 = "hello world";
+const countDuplicate = (arr) => {
+    const count = {};
+    arr.forEach((value) => {
+        count[value] = count[value] ? count[value] + 1 : 1;
+    });
+
+    return count;
+}
+
+console.log(countDuplicate(arr7));
+
+const countDuplicateStr = (str) => {
+    const count = {};
+    str.split('').forEach((value) => {
+        count[value] = count[value] ? count[value] + 1 : 1;
+    });
+
+    return count;
+}
+
+console.log(countDuplicateStr(str2));
+
+//find the count of each character from an string
+const str3 = "hello world";
+const countChar = (str) => {
+    const count = {};
+    str.split('').forEach((value) => {
+        count[value] = count[value] ? count[value] + 1 : 1;
+    });
+
+    return count;
+}
+
+console.log(countChar(str3));
+
+//find the vowels and consonants count from an string
+const str4 = "hello world";
+const countVowelsConsonants = (str) => {
+    const count = { vowels: 0, consonants: 0 };
+    str.split('').forEach((value) => {
+        if (value.match(/[aeiou]/)) {
+            count.vowels++;
+        } else {
+            count.consonants++;
+        }
+    });
+
+    return count;
+}
+
+console.log(countVowelsConsonants(str4));
+
+//find the anagram from an array of strings
+
+const arrayStr = ["listen", "silent", "hello", "world"];
+
+const findAnagram = (arr) => {
+    const anagram = {};
+    arr.forEach((value) => {
+        const sortedValue = value.split('').sort().join('');
+        if (anagram[sortedValue]) {
+            anagram[sortedValue].push(value);
+        } else {
+            anagram[sortedValue] = [value];
+        }
+    });
+
+    return anagram;
+}
+
+console.log(findAnagram(arrayStr));
+
+
+//find the count of each word from an string
+const str5 = "hello world hello";
+
+const countWord = (str) => {
+    const count = {};
+    str.split(' ').forEach((value) => {
+        count[value] = count[value] ? count[value] + 1 : 1;
+    });
+
+    return count;
+}
+
+console.log(countWord(str5));
+
+//check the palindrome
+const palindromeString =(str7)=>{ 
+    const reverseStr = str7.split('').reverse().join('');
+
+    if (str7 === reverseStr) { 
+        return "it is  a palindrome";
+    }
+
+    return "it is not a palindrome";
+}
+
+console.log(palindromeString('madam'));
+
+//make a class and create an object
+class Person { 
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    display(){
+        console.log(`Name: ${this.name} and Age: ${this.age}`);
+    }
+}
+
+const person1 = new Person("shoan", 25);
+console.log(person1.display());
+
+//make a class and create an object with getter and setter
+class Person2 { 
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    get getName(){
+        return this.name;
+    }
+
+    set setName(name){
+        this.name = name;
+    }
+
+    display(){
+        console.log(`Name: ${this.name} and Age: ${this.age}`);
+    }
+}
+
+const person2 = new Person2("shoan", 25);
+console.log(person2.getName);
+
+
+const reverseString = (str) => { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) { 
+        reversed += str[i];
+    }
+
+    return reversed;
+}
+
+console.log(reverseString('hello, world'));
